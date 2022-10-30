@@ -54,7 +54,7 @@ contract LeBo {
     function isSolvent(address user) public view returns (bool) {
         uint256 collateralValue = wethDeposited[user] * ethPrice() + daiDeposited[user];
         // 90% LTV
-        uint256 maxBorrow = collateralValue * 100 / 90;
+        uint256 maxBorrow = collateralValue * 90 / 100;
         uint256 borrowed = wethBorrowed[user] * ethPrice() + daiBorrowed[user];
         return maxBorrow >= borrowed;
     }
